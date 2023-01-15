@@ -11,7 +11,7 @@ import os
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument("--profile-directory=Default")
-options.add_argument("--user-data-dir=/var/tmp/chrome_user_data")
+options.add_argument("--user-data-dir=D:/var/tmp/chrome_user_data")
 
 os.system("")
 os.environ["WDM_LOG_LEVEL"] = "0"
@@ -70,7 +70,7 @@ for idx, number in enumerate(numbers):
 	try:
 		url = 'https://web.whatsapp.com/send?phone=' + number + '&text=' + message
 		sent = False
-		for i in range(3):
+		for i in range(1):
 			if not sent:
 				driver.get(url)
 				try:
@@ -83,7 +83,7 @@ for idx, number in enumerate(numbers):
 					sleep(1)
 					click_btn.click()
 					sent=True
-					sleep(3)
+					sleep(1)
 					print(style.GREEN + 'Message sent to: ' + number + style.RESET)
 	except Exception as e:
 		print(style.RED + 'Failed to send message to ' + number + str(e) + style.RESET)
